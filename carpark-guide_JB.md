@@ -361,11 +361,11 @@ You may want to see the number of available bays, the current temperature, and t
 Now consider, between the `CarPark`, `Sensor`, and `Display` classes, which class is responsible for each piece of information? There's no right or wrong answer here. But you should be able to justify your answer.
 
 >Q. Which class is responsible for the number of available bays (and why)?
->
+>CarPark class is responsible for the number of available bays as it includes the attributes of capacity of bays and plates which lodges the plates of the cars. It then uses the methods of register, add remove car and update displays to track the number of cars entering, leaving and what is available or not available as a car park. 
 >Q. Which class is responsible for the current temperature (and why)?
->
+>As per the project requirements, a temperature of the car park will need to be displayed from an external weather data file. As the diplay class contains attributes on what is seen in the car park, the temperature information should be located in this class as well. 
 >Q. Which class is responsible for the time (and why)?
->
+>The sensor class has created sub-classes for entry and exit of cars. An attribute of time should also be included to be noted so that this can be displayed when the cars enter and exit. 
 --------
 
 ##### Detour: implement available bays

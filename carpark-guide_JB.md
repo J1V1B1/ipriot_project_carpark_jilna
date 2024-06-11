@@ -436,27 +436,25 @@ This time, we will push the tag to the remote repository:
 
 Add a screenshot of the GitHub repository after pushing the tag, showing the CarPark class with the new methods:
 
-```markdown
-![Added methods to the car park class](images/methods-to-car-park.png)
-```
+![Method to car park class.png](Screenshots%2FMethod%20to%20car%20park%20class.png)
 
 Answer the following questions:
 > **Review Questions**
 >
-> 1. **Which class is responsible for each of the following pieces of information (and why)?**
->    - _The number of available bays_  
->      `Answer here...`
->    - _The current temperature_  
->      `Answer here...`
->    - _The time_  
->      `Answer here...`
->
+> 1. Which class is responsible for each of the following pieces of information (and why)?**
+>    (This has been copied from the information supplied in previous question)
+>      Q. Which class is responsible for the number of available bays (and why)?
+>CarPark class is responsible for the number of available bays as it includes the attributes of capacity of bays and plates which lodges the plates of the cars. It then uses the methods of register, add remove car and update displays to track the number of cars entering, leaving and what is available or not available as a car park. 
+>Q. Which class is responsible for the current temperature (and why)?
+>As per the project requirements, a temperature of the car park will need to be displayed from an external weather data file. As the diplay class contains attributes on what is seen in the car park, the temperature information should be located in this class as well. 
+>Q. Which class is responsible for the time (and why)?
+>The sensor class has created sub-classes for entry and exit of cars. An attribute of time should also be included to be noted so that this can be displayed when the cars enter and exit. 
+>    
 > 2. **What is the difference between an attribute and a property?**  
->    `Answer here...`
+>    An attribute is a characteristic of an object and a property is a type of attribute which can control how it can be accessed or modified in a program. An attribute does not have this function as the user is only able to access it.  
 >
 > 3. **Why do you think we used a dictionary to hold the data we passed the display? List at least one advantage and one disadvantage of this approach.**  
->    `Answer here...`
-
+>    A dictionary was used so that the information can be stored, organised and accessed in a more streamlined way rather than individually holding the information in separate files. An advantage of this is that it makes the number of bays and temperature data easier to be accessed from a central source. A disadvantage of this however is that the data will be stored in an unordered manner making it difficult to find a particular item in the set. 
 #### Add a detect vehicle method to the Sensor class
 
 A sensor detects a vehicle, scans the plate, and notifies the car park. The Sensor class is specialized by the EntrySensor and ExitSensor classes. We will implement the `detect_vehicle` method in the `EntrySensor` and `ExitSensor` classes.

@@ -1,4 +1,6 @@
+import random
 from abc import ABC, abstractmethod
+
 class Sensor(ABC):
     def __init__(self, id, is_active, car_park=None):
         self.id = id
@@ -6,7 +8,7 @@ class Sensor(ABC):
         self.car_park = car_park or []
 
     def __str__(self):
-        return f"Sensor(id={self.id}, is_active={self}"
+        return f"Sensor(id={self.id}, is_active={self})"
 
     @abstractmethod
     def update_car_park(self, plate):
@@ -21,7 +23,7 @@ class Sensor(ABC):
 
 class EntrySensor(Sensor):
     def update_car_park(self, plate):
-        self.car_park.add_car_park(plate)
+        self.car_park.add_car(plate)
         print(f"Incoming 🚘 vehicle detected. Plate: {plate}")
 
 class ExitSensor(Sensor):

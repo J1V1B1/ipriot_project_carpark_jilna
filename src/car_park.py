@@ -19,7 +19,7 @@ class CarPark:
         return f"Location: {self.location}, Capacity: {self}"
 
     def register(self, component):
-        if isinstance(component, (Sensor, Display)):
+        if not isinstance(component, (Sensor, Display)):
             raise TypeError("Object must be a Sensor or Display")
         if isinstance(component, Sensor):
             self.sensors.append(component)
@@ -54,7 +54,8 @@ class CarPark:
 
     def _log_car_activity(self, plate, action):
         with self.log_file.open("a") as f:
-            f.write(f"{plate} {action} at {datetime.now()}\n"
+            f.write(f"{plate} {action} at {datetime.now()}\n")
+
 
     def write_config(self):
         with open("config.json", "w") as f:

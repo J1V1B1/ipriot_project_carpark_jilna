@@ -1,8 +1,7 @@
-from car_park import CarPark
 from abc import ABC, abstractmethod
 class Sensor(ABC):
-    def __init__(self, id=None, is_active, car_park=None):
-        self.id = id or []
+    def __init__(self, id, is_active, car_park=None):
+        self.id = id
         self.is_active = is_active
         self.car_park = car_park or []
 
@@ -23,7 +22,7 @@ class Sensor(ABC):
 class EntrySensor(Sensor):
     def update_car_park(self, plate):
         self.car_park.add_car_park(plate)
-        print(f"Incoming 🚘 vehicle detected. Plate: {plate}")")
+        print(f"Incoming 🚘 vehicle detected. Plate: {plate}")
 
 class ExitSensor(Sensor):
     def update_car_park(self, plate):

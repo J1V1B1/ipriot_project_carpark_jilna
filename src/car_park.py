@@ -30,12 +30,12 @@ class CarPark:
 
     @property
     def available_bays(self):
-        if len(self.plates) > self.capacity
+        if len(self.plates) > self.capacity:
             return 0
         else:
             return self.capacity - len(self.plates)
 
     def update_displays(self):
-        data = {"available_bays": self.available_bays, "temperature": }
+        data = {"available_bays": self.available_bays, "temperature": 0}
         for display in self.displays:
             display.update(data)
